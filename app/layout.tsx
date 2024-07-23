@@ -1,3 +1,24 @@
+import React from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Sidebar from './components/Sidebar';
+
+const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  return (
+    <div>
+      <Header />
+      <div style={{ display: 'flex' }}>
+        <Sidebar />
+        <main style={{ flex: 1 }}>
+          {children}
+        </main>
+      </div>
+      <Footer />
+    </div>
+  );
+};
+
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
